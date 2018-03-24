@@ -1,10 +1,10 @@
 export default {
-    hostDB:'54.254.239.131',
-    userDB:'marketuser',
-    passwordDB:'NhomPTTT',
+    hostDB:'',
+    userDB:'',
+    passwordDB:'',
     portDB:'3306',
-    nameDB:'matrix_ps',
-    secretKey:'@@@secret_key',
+    nameDB:'',
+    secretKey:'',
     portServer:9100
 }
 // export default {
