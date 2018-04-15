@@ -163,7 +163,7 @@ function main() {
                         $("#alertMess").show();
                     }
                 })
-            }, 1000)
+            }, 30000)
 
         });
 
