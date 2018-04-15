@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VIVA RIVERSIDE | CĂN HỘ - CHUNG CƯ CAO CẤP QUẬN 6</title>
   <meta name="description" content="">
-  <meta name="author" content="Nguyễn Thành Phong - 0902767595">
+  <meta name="author" content="0902767595">
   <link rel="shortcut icon" href="img/favicon.ico">
 
   <!-- Favicons
@@ -19,6 +19,8 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  <link rel="stylesheet" href="font-awesome-animation.min.css">
+
 
   <!-- Slider
     ================================================== -->
@@ -55,15 +57,17 @@
         </button> -->
         <a class="navbar-brand" href="index.html">
           <img src="img/logo-top.png" class="img-responsive">
-          <span>HOTLINE 0902.767.595</span>
+          <p class="title" style="font-family: Arial;"><b style="color: #019c4c;">&nbsp;&nbsp;VIVA</b> <i style="color: #6363ff; font-family: times">Riverside</i></p>
         </a>
       </div>
       <div class="pull-right header-detail">
         <a target="blank" href="https://goo.gl/maps/cneUNFA9RP82">
           <i class="fa fa-map-marker"></i> 1472 Võ Văn Kiệt, P3, Q6</a>
         <br>
-        <a href="tel:+84902-767-595">
-          <i class="fa fa-phone-square"></i> HOTLINE 0902.767.595</a>
+        <a href="tel:+84902-767-595" class="light-loop">
+          <i class="fa fa-phone-square faa-ring animated "></i> HOTLINE 0902.767.595</a>
+        <br>
+        <button class="btn btn-success" data-toggle="modal" data-target="#cusInfo" style="height: 30px;float: right;padding: 5px 10px;font-size: 14px;">Nhận Tư Vấn Tại Đây</button>
 
       </div>
 
@@ -718,6 +722,71 @@
   <script>
     new WOW().init();
   </script>
+
+  <div id="cusInfo" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Nhận tư vấn</h4>
+        </div>
+        <div class="modal-body">
+          <div id="alertMess" class="form-group text-center bg-warning" style="display: none;">
+            <label class="text-danger"> Vui lòng điền vào những trường bắt buộc có dấu *</label>
+          </div>
+          <div class="form-group">
+            <label for="custName">Tên Anh/Chị *</label>
+            <input maxlength="20" type="text" placeholder="Vui lòng nhập tên quý khách" class="form-control" id="custName">
+          </div>
+          <div class="form-group">
+            <label for="custPhone">Điện thoại liên lạc *</label>
+            <input maxlength="20" type="text" placeholder="Vui lòng để lại số điện thoại để nhân viên tư vấn hỗ trợ cho quý khách" class="form-control"
+              id="custPhone">
+          </div>
+          <div class="form-group">
+            <label for="custEmail">Địa chỉ email</label>
+            <input maxlength="30" type="text" placeholder="Vui lòng để lại địa chỉ email để nhân viên tư vấn hỗ trợ cho quý khách" class="form-control"
+              id="custEmail">
+          </div>
+          <div class="form-group">
+            <label for="custComment">Thông tin cần hỏi</label>
+            <textarea maxlength="100" type="text" placeholder="Quý khách có thắc mắc hay nhu cầu cần tư vấn hãy để lại câu hỏi tại đây" class="form-control"
+              id="custComment"></textarea>
+          </div>
+          <!-- <div class="g-recaptcha" data-sitekey="6Lfawk4UAAAAAJ8887BrXeD5VDnmHHM1peqqr7gr"></div> -->
+        </div>
+        <div class="modal-footer">
+          <button id="submitCustForm" type="button" class="btn btn-success">Xác nhận</button>
+          <button id="cancelCustForm" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="cusMessSuccess" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class=" text-center">Xin cám ơn quý khách. Nhân viên tư vấn sẽ liên hệ với quý khách trong thời gian sớm nhất</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyDsjA4w4Gm2z54S8lE2kC_GO0FkdcZ8zFo",
+      authDomain: "khachhang-a32b5.firebaseapp.com",
+      databaseURL: "https://khachhang-a32b5.firebaseio.com",
+      storageBucket: "khachhang-a32b5.appspot.com"
+    };
+    firebase.initializeApp(config);
+  </script>
+
 </body>
 
 </html>
